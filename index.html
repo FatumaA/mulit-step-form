@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personnel Registration Form - Multi-step Application</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Personnel Registration Form</h1>
+    <form id="myForm">
+        <section class="group-one" id="one">
+            <div class="form-group">
+                <div class="form-control">
+                    <label for="name">
+                        Name
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name" aria-required="true">
+                    <span id="name-error" class="error-message" role="alert"></span>
+                </div>
+                <div class="form-control">
+                    <label for="idNum">
+                        ID number
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="number" id="idNum" name="idNum" placeholder="Enter your ID number"
+                        aria-required="true">
+                    <span id="id-error" class="error-message" role="alert"></span>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="form-control">
+                    <label for="email">
+                        Email
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" aria-required="true">
+                    <span id="email-error" class="error-message" role="alert"></span>
+                </div>
+                <div class="form-control">
+                    <label for="birthdate">
+                        Date of Birth
+                        <span style="color: red;">*</span>
+                    </label>
+                    <input type="date" id="birthdate" name="birthdate" max="2006-10-01" min="1924-01-01"
+                        aria-required="true">
+                    <span id="bd-error" class="error-message" role="alert"></span>
+                    <span id="error"></span>
+                </div>
+            </div>
+        </section>
+        <section class="group-two" id="two">
+            <div class="form-control">
+                <label for="document">
+                    Upload CV/Resume
+                    <span style="color: red;">*</span>
+                </label>
+                <input type="file" name="document" id="document" accept=".pdf,.doc,.docx" aria-required="true">
+                <span id="doc-error" class="error-message" role="alert"></span>
+
+            </div>
+            <div class="form-control">
+                <label for="department">
+                    Department
+                    <span style="color: red;">*</span>
+                </label>
+                <select id="department" name="department" aria-required="true">
+                    <option value="">Select a department</option>
+                    <option value="hr">Human Resources</option>
+                    <option value="it">Information Technology</option>
+                    <option value="finance">Finance</option>
+                    <option value="marketing">Marketing</option>
+                </select>
+                <span id="dept-error" class="error-message" role="alert"></span>
+            </div>
+        </section>
+        <section class="group-three" id="three">
+            <div class="form-control">
+                <label for="skills">Skills (Optional)</label>
+                <textarea id="skills" name="skills" rows="4" placeholder="Enter your skills"></textarea>
+            </div>
+            <div class="form-control">
+                <input type="checkbox" name="terms" id="terms" aria-required="true">
+                <label for="terms">
+                    I agree to the terms and conditions
+                    <span style="color: red;">*</span>
+                </label>
+                <span id="terms-error" class="error-message" role="alert"></span>
+            </div>
+        </section>
+        <section class="group-four" id="four" aria-label="Form Summary">
+
+            <div class="summary-section">
+                <p>Name: </p>
+                <p id="name-val"></p>
+                <button class="edit-btn" id="name-edit">
+                    <span>✎</span>
+                    <span>Edit</span>
+                </button>
+            </div>
+            <div class="summary-section">
+                <p>ID Number: </p>
+                <p id="id-val"></p>
+                <button class="edit-btn" id="id-edit">
+                    <span>✎</span>
+                    <span>Edit</span>
+                </button>
+
+            </div>
+            <div class="summary-section">
+                <p>Email: </p>
+                <p id="email-val"></p>
+                <button class="edit-btn" id="email-edit">
+                    <span>✎</span>
+                    <span>Edit</span>
+                </button>
+
+            </div>
+            <div class="summary-section">
+                <p>Date of Birth: </p>
+                <p id="bd-val"></p>
+                <button class="edit-btn" id="bd-edit">
+                    <span>✎</span>
+                    <span>Edit</span>
+                </button>
+            </div>
+            <div class="summary-section">
+                <p>CV/Resume: </p>
+                <p id="cv-val"></p>
+                <button class="edit-btn" id="cv-edit">
+                    <span>✎</span>
+                    <span>Edit</span>
+                </button>
+            </div>
+            <div class="summary-section">
+                <p>Department: </p>
+                <p id="dept-val"></p>
+                <button class="edit-btn" id="dept-edit">
+                    <span>✎</span>
+                    <span>Edit</span>
+                </button>
+            </div>
+            <div class="summary-section">
+                <p>Skills: </p>
+                <p id="skills-val"></p>
+                <button class="edit-btn" id="skills-edit">
+                    <span>✎</span>
+                    <span>Edit</span>
+                </button>
+            </div>
+
+            <button id="btn" type="submit">Confirm and Submit</button>
+        </section>
+        <div class="arrows">
+            <button class="nav-group" id="navLeft" type="button" aria-label="Previous step">
+                <span class="arrow-left">&#8592;</span>
+                <span>Previous</span>
+            </button>
+            <span id="stepInfo" role="status" aria-live="polite"></span>
+            <button class="nav-group" id="navRight" type="button" aria-label="Next step">
+                <span>Next</span>
+                <span class="arrow-right">&#8594;</span>
+            </button>
+        </div>
+
+    </form>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

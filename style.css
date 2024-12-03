@@ -1,0 +1,137 @@
+:root {
+    --primary-color: #8c852a;
+    --secondary-color: #858034;
+    --form-max-width: 600px;
+  }
+body {
+    font-family: "Comfortaa", sans-serif;
+    line-height: 1.4;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f4f4f4;
+    max-width: 600px;
+}
+
+.lang-select{
+    width: fit-content;
+    margin-left: auto;
+
+}
+h1 {
+    text-align: center;
+}
+form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+.form-group {
+    display: flex;
+    gap: 7%;
+}
+.form-group > div {
+    width: 100%;
+}
+input:not([type="checkbox"]), 
+select,
+textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+.form-control{
+    margin-bottom: 15px;
+}
+input:focus, select:focus, textarea:focus {
+    outline: .5px solid var(--primary-color);
+}
+input.error, select.error, textarea.error{
+    outline: .5px solid red;
+}
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    color: white;
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+button:hover {
+    background-color: var(--secondary-color);;
+}
+span#error,
+span[id$="-error"] {
+    font-size: x-small;
+    color: red;
+    margin-top: 2px;
+}
+
+.group-two, .group-three {
+    display: none;
+}
+
+.arrows {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 900;
+}
+#navLeft, #navRight{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+}
+.nav-group{
+    width: fit-content;
+}
+.summary-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.summary-section p:first-child {
+    width: 30%;
+    flex-shrink: 0;
+    border-right: 1px solid var(--secondary-color);
+}
+
+.summary-section p:nth-child(2) {
+    width: 45%;
+    flex-shrink: 0;
+    padding-left: 10px;
+}
+
+.edit-btn {
+    width: 25%;
+    margin-left: auto;
+    background-color: transparent;
+    color: var(--primary-color);
+    border: .7px solid var(--primary-color);
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.edit-btn:hover {
+    border: 2px solid var(--primary-color);
+    font-weight: bolder;
+    background-color: transparent;
+}
+
+@media screen and (max-width: 600px) {
+    .form-group {
+        display: flex;
+        flex-direction: column;
+    }
+}
