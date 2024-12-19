@@ -22,6 +22,10 @@ This project demonstrates a multi-step form using semantic HTML, vanilla JavaScr
 - JavaScript
 - ARIA attributes for accessibility
 
+## JSFiddle
+
+Here is a [link to a JSFiddle](https://jsfiddle.net/appel/15pn4b0j/) of the project you can start playing with. Contributed by GitHub user [@appel](https://github.com/appel).
+
 ## Getting Started
 
 1. Clone the repository:
